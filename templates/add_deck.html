@@ -1,0 +1,66 @@
+<!DOCTYPE html>    
+<html>    
+<head>    
+    <title>Login Form</title>    
+    <link rel="stylesheet" type="text/css" href="css.css">    
+</head> 
+<style>
+    body {background-image:url("/static/background.jpg");
+    background-size:cover;
+       text-align:center;
+    width: 1000px; 
+  border: 15px solid rgb(182, 202, 111);
+  padding: 30px;
+  margin: 150px;
+  background-color:#FFFACD;
+  }
+</style>   
+<body> 
+
+    <script>
+        function validateForm() {
+    var x = document.forms["myform"]["deck_name"].value;
+    var y = document.forms["myform"]["descr"].value;
+    if (x == "" ) {
+      alert("Deck name cant be empty");
+      return false;
+    }
+    if (y=="")
+    {
+        alert("deck should hae a description");   
+    
+      return false;
+    }
+}
+  
+    </script>
+    <h1 style="background-color:#FFD700;text-align:center">ADD DECK</h1>
+    <h2 style="background-color:rgba(255, 99, 71, 0.5); text-align:center">USER: {{u.username}}</h2><br>
+       
+       
+ <div  style="text-align:right">
+            <a href="/login_user"> <button style="font-size: 20px;border-radius: 6px; background-color: #87CEEB; float: right;" >LOGOUT</button> </a>
+           </div>
+           
+    <div class="login">    
+        <form name="myform" action="/{{u.user_id}}/add_deck" method="POST"  onsubmit="return validateForm()" id="create-form" style="text-align:center">
+        <label><b>Deck Name     
+        </b>    
+        </label>  
+        <input type="text" name="deck_name" value="deck_name" required />  
+         
+        <br><br>    
+        <label><b>Description    
+        </b>    
+        </label> 
+        <input type="text" name="descr" value="descr" required />    
+        <br><br>  
+        <a style="text-align:center"  href="/{{u.user_id}}/dashboard"><input type="submit" style="font-size: 20px;border-radius: 8px;background-color:#98FB98; text-align:center" value="Add Deck"/> </a>
+    </form> 
+</div><br>
+    <div style="text-align: center;"> 
+    <a style="text-align:center" href="/{{u.user_id}}/dashboard"><input type="submit" style="font-size: 20px;border-radius: 8px;background-color:#98FB98; text-align:center" value="Return to Dashboard"/> </a> 
+</div>  
+    
+</body>    
+</html>

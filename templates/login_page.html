@@ -1,0 +1,63 @@
+<!DOCTYPE html>    
+<html>    
+<head>    
+    <title  style="text-align:center">Login Form</title>    
+    <link rel="stylesheet" type="text/css" href="css1.css">    
+</head> 
+<style>
+    body {background-image:url("/static/background.jpg");
+    background-size:cover;
+    text-align:center;
+        width: auto;
+  border: 15px solid rgb(182, 202, 111);
+  padding: 30px;
+  margin: 150px;
+  background-color:#FFFACD;}
+</style>   
+<body>  
+    <script>
+        function validateForm() {
+    var x = document.forms["myform"]["Uname"].value;
+    var y = document.forms["myform"]["Pass"].value;
+    if (x == "" ) {
+      alert("Name must be filled out");
+      return false;
+    }
+    if (y=="")
+    {
+        alert("Password cant be empty");   
+    
+      return false;
+    }
+}
+  
+    </script> 
+   
+    <h1  style="background-color:#FFD700;text-align:center">LOGIN  PAGE</h1><br>    
+    <div class="login"  style="text-align:center">    
+
+     <form name="myform" action="/login_user"  method="post" onsubmit="return validateForm()" 
+     required>  
+        <label><b>User Name     
+        </b>    
+        </label>    
+        <input type="text" name="Uname" id="Uname" placeholder="Username">    
+        <br><br>    
+        <label><b>Password     
+        </b>    
+        </label>    
+        <input type="Password" name="Pass" id="Pass" placeholder="Password">    
+        <br><br>  
+        <a href="/dashboard"><input type="submit" style="font-size: 20px;border-radius: 6px;background-color:#98FB98; text-align:center" value="log in"/> </a>
+         
+       
+        <br><br>      
+        <br><br> 
+        <a href="/new_user" >Click here for New User </a> 
+       
+          
+    </form>     
+</div>    
+
+</body>    
+</html>

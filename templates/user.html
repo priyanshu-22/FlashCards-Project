@@ -1,0 +1,66 @@
+<!DOCTYPE html>    
+<html>    
+<head>    
+    <title>Login Form</title>    
+    <link rel="stylesheet" type="text/css" href="css.css">    
+</head> 
+<style>
+    body {background-image:url("/static/background.jpg");
+    background-size:cover;
+        
+    text-align:center;
+    width: auto; 
+  border: 15px solid rgb(182, 202, 111);
+  padding: 30px;
+  margin: 150px;
+  background-color: #FFFACD;}
+</style>   
+<body>    
+    <script>
+        function validateForm() {
+    var x = document.forms["myform"]["deck_name"].value;
+    var y = document.forms["myform"]["descr"].value;
+    if (x == "" ) {
+      alert("Deck name cant be empty");
+      return false;
+    }
+    if (y=="")
+    {
+        alert("deck should hae a description");   
+    
+      return false;
+    }
+}
+  
+    </script>
+
+ <div  style="text-align:right">
+            <a href="/login_user"> <button style="font-size: 20px;border-radius: 6px; background-color: #87CEEB; float: right;" >LOGOUT</button> </a>
+           </div>
+
+    <h1 style="background-color:#FFD700;text-align:center">UPDATE USER PROFILE</h1>
+    <h2 style="background-color:#FFD700;text-align:center">USER: {{u.username}}</h2>
+       
+
+    <div >    
+        <form  style="text-align:center" name="myform" action="/{{u.user_id}}/user" method="POST"  onsubmit="return validateForm()"  id="create-form">
+        <label><b>Enter User Name     
+        </b>    
+        </label>  
+        <input type="text" name="name" value="{{u.username}}" required />  
+         
+        <br><br>    
+        <label><b>Enter Updated Password    
+        </b>    
+        </label> 
+        <input type="text" name="pass" value="{{u.password}}" required />    
+        <br><br>  
+        <a href="/{{u.user_id}}/dashboard"><input type="submit" style="font-size: 20px;border-radius: 8px;background-color:#87CEEB; text-align:center" value="Update User Profile"/> </a>
+    </form> 
+</div> 
+<br><br>
+<div style="text-align:center">
+    <a href="/{{u.user_id}}/dashboard"><input type="submit" style="font-size: 20px;border-radius: 8px;background-color:#87CEEB; text-align:center" value="Return to Dashboard"/> </a>
+</div>    
+</body>    
+</html>

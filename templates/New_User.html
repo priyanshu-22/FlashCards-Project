@@ -1,0 +1,71 @@
+<!DOCTYPE html>    
+<html>    
+<head>
+  <style>
+    body { background-image:url("/static/background.jpg");
+    background-size:cover;
+    text-align:center;
+    width: 1000px; 
+  border: 15px solid rgb(182, 202, 111);
+  padding: 30px;
+  margin: 150px;
+  background-color: #FFFACD;}
+  </style>    
+    <title  style="text-align:center">Login Form</title>    
+    <link rel="stylesheet" type="text/css" href="css1.css"> 
+    <script>
+        function validateForm() {
+    var x = document.forms["myform"]["Uname"].value;
+    var y = document.forms["myform"]["Pass"].value;
+    var z = document.forms["myform"]["rPass"].value;
+    if (x == "" ) {
+      alert("user should have a name");
+      return false;
+    }
+    if (y=="")
+    {
+        alert("user should have a password");   
+    
+      return false;
+    }
+    if (z=="")
+    {
+        alert("password needs to be re-entered for verification");   
+    
+      return false;
+    }
+} 
+</script>  
+</head>    
+<body>   
+
+    <h1  style="background-color:#FFD700;text-align:center">REGISTERATION PAGE</h1><br>    
+    <div   style="text-align:center" class="login">    
+        <form name='myform' action="/new_user" method="POST"  onsubmit="return validateForm()"
+        id="create-form"> 
+        <label><b>Enter Full Name     
+        </b>    
+        </label>    
+        <input type="text" name="Uname" id="Uname" placeholder="Name">    
+        <br><br>    
+        <label><b>Enter Password     
+        </b>    
+        </label>    
+       
+        <input type="Password" name="Pass" id="Pass" placeholder="Password">    
+        <br><br> 
+        <label><b>Re-Enter Password     
+        </b>    
+        </label>    
+       
+        <input type="Password" name="rPass" id="rPass" placeholder="Password">    
+        <br><br> 
+        <a href="/dashboard"><input type="submit" value="log in"/> </a>
+              
+        <br><br>      
+        <br><br>    
+       
+    </form>     
+</div>    
+</body>    
+</html>
