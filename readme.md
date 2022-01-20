@@ -1,9 +1,37 @@
-for running on replit just  upload  on replit the unzip folder here,and paste the code inside main.py in the replit main.py ile  and click on run button and go to displayed link in console to run it,ensure that  all static ,tempaltes and code is present as different files inside replit,and the main.py  code of  the zipped folder should be exactly copied inside main.py of replit  where it needs to be run
+Description
+We need to make a flashcard Displaying Web- App,which will work on basis of
+memorization of user. User after login will be able to add no. of decks of his choice and
+multiple cards along with required ques and ans, after starting any of the decks,he will also 
+review the question level which he felt and accordingly score will be given to him after 
+completion of deck and last run time of deck will also be stored 
 
-use the username-'priyanshu singh'
-and password-'singh'
- to log in to a already made dashboard with decks and cards
- or click on new user to make a new blank dashboard with new user
+Technologies used
+
+• HTML for making the templates of the displayed pages along with jinja templates for editing the 
+HTML codes
+• CSS,Bootstrap for styling the HTML pages
+• Javascript for applying conditions by using functions on codes
+• Python for writing and implementing different functions of code
+• Sqlalchemy for making, storing and editing databases inside python code for the main function 
+of code
+• Flask for implementing different parts insde the web application including 
+render_template,request,redirect
+• Datetime module for storing latest date and time 
+ 
+
+
+Then I have called the Flask module for functioning of web-app features and SqlAlchemy for 
+database and name it as database1.sqlite3.I wrote then 3 different classes that were User.Decks and 
+Cards that were added in database.
+Then I made different app.route controllers for calling different pages that were connected to the 
+user like the decks that are added by the user ,the cards that are added inside the deck
+,I included controllers for logging inside the user, adding, removing, updating a deck ,also 
+controllers for adding, removing, updating the cards and controllers to start reviewing a deck. All 
+these controllers have a connected html file via render _template method to call those particular 
+pages for display
+Additionally, I have used CSS to implement a flipping techniques for each cards that comes for 
+review nd also for each deck that flips and shows latest time and score and each card also on 
+flipping shows ques and ans respectively
 
 # Folder Structure
 
